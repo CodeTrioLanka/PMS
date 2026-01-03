@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportpsm" pageWidth="595" pageHeight="600" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6b80467-93c0-4060-aace-cceae823cacc">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<parameter name="system_date" class="java.lang.String"/>
+	<parameter name="sup_id" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select b.sup_id,b.s_name,c.root_name,a.date,a.wet_weight,a.sackweight,a.totalqty,a.total,a.peronekg,a.travel_com,a.trade_com,a.m_payemnt from
+supplier_payment a inner join supplier b on  a.supplier_sup_id=b.sup_id inner join root c on a.root_root_id=c.root_id where a.system_date=$P{system_date} and a.supplier_sup_id=$P{sup_id};]]>
+	</queryString>
+	<field name="sup_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sup_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier"/>
+	</field>
+	<field name="s_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="s_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier"/>
+	</field>
+	<field name="root_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="root_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="root"/>
+	</field>
+	<field name="date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier_payment"/>
+	</field>
+	<field name="wet_weight" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="wet_weight"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier_payment"/>
+	</field>
+	<field name="sackweight" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="sackweight"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier_payment"/>
+	</field>
+	<field name="totalqty" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="totalqty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier_payment"/>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier_payment"/>
+	</field>
+	<field name="peronekg" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="peronekg"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier_payment"/>
+	</field>
+	<field name="travel_com" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="travel_com"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier_payment"/>
+	</field>
+	<field name="trade_com" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="trade_com"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier_payment"/>
+	</field>
+	<field name="m_payemnt" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="m_payemnt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier_payment"/>
+	</field>
+	<title>
+		<band height="321" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="-10" width="330" height="30" uuid="0ee87404-66c8-4a4b-a93b-abd67e01d85a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Kandawela Tea Collectors]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="40" width="50" height="20" uuid="878088bc-4c0e-4028-ac34-6267137b73a4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="40" width="90" height="21" uuid="9faeefa7-5423-438f-8601-42705325d11e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{sup_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="40" width="70" height="20" uuid="fb0668fe-57d9-4b3c-b5e2-3db2b7a12fa7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="40" width="100" height="20" uuid="42d462b2-f2d9-4e60-a29d-bc241ba1284b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{s_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="400" y="40" width="60" height="20" uuid="109c974c-820a-42a2-aa79-177d7ba99f88"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Route]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="460" y="40" width="80" height="20" uuid="d881d1fa-9e05-4812-82fb-1b4179d711b6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{root_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="60" width="60" height="20" uuid="930f454d-28d1-44a5-a290-2614ae281e5b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="60" width="100" height="20" uuid="36bab049-124f-4409-8599-0e4b204d76f0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{totalqty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="62" width="70" height="20" uuid="ca31530f-3e76-4287-a9b7-25c4b5363097"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Per 1 Kg]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="62" width="100" height="20" uuid="cf5e2c24-34fc-4c0f-8da7-cdcb97899223"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{peronekg}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="60" width="560" height="2" uuid="489a8ff4-79a6-474d-a2dd-a2ad5da7c024"/>
+			</line>
+			<staticText>
+				<reportElement x="400" y="62" width="70" height="20" uuid="30aae52a-dd72-4cf9-8112-65840b0f363f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="470" y="62" width="90" height="20" uuid="04a95620-e129-4ab8-8709-64919d12d832"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="80" width="560" height="2" uuid="ee0a8375-5d35-48ed-b050-115c5dd7c53b"/>
+			</line>
+			<staticText>
+				<reportElement x="130" y="90" width="160" height="30" uuid="020eb97d-dec9-42be-962d-f157e60b72fc"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Weight Reduction]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="130" width="70" height="20" uuid="1adcbddb-7c56-453d-a425-08b057e73355"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sack Weight]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="130" width="100" height="20" uuid="e207991d-4645-4b67-b44a-3633fbc79d05"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sackweight}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="160" width="70" height="20" uuid="5f560410-d609-411d-9a74-1a56a0846e2d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Wet Weight]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="160" width="100" height="20" uuid="2ac3c002-c1aa-4217-9aa6-bd52677c562e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{wet_weight}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="330" y="190" width="100" height="20" uuid="c32bb6e8-9e8c-441d-8cc0-44f04bb2c868"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="470" y="190" width="100" height="20" uuid="23858fa6-322a-4260-bb4d-97268c691191"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="318" y="190" width="242" height="1" uuid="71de74ba-0a4e-4cfe-b25e-e72f23abb2f9"/>
+			</line>
+			<line>
+				<reportElement x="317" y="220" width="243" height="1" uuid="bac70b3e-e0c8-4767-af55-7246f2ee88a4"/>
+			</line>
+			<staticText>
+				<reportElement x="135" y="210" width="160" height="30" uuid="b446373e-1eea-4329-bbac-3e9979d6e5c6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comission]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="240" width="70" height="20" uuid="5c332081-8dd5-482c-a958-f059f68e0f38"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Trasport]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="240" width="100" height="20" uuid="04c4b6ca-4ae4-469a-ac68-9730f453f96a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{travel_com}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="270" width="70" height="20" uuid="3e111497-5fe9-470a-8b8c-cd7299fb76ca"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Trade]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="270" width="100" height="20" uuid="024eddef-700d-47fa-8330-9e1832f85905"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trade_com}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="290" width="100" height="20" uuid="ba64ec9f-10b9-49f5-b333-ea055f81d22b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Pay]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="460" y="290" width="100" height="20" uuid="6787d71a-9954-419d-b60c-f5d2733a76cd"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{m_payemnt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>
